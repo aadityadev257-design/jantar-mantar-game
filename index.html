@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Jantar Mantar: Chaos Protocol</title>
+  <style>
+    body { margin: 0; background: #1a1a1a; overflow: hidden; font-family: system-ui, sans-serif; }
+    #game-container { width: 100vw; height: 100vh; }
+    #ui-overlay {
+      position: absolute; top: 10px; left: 10px; color: #fff; pointer-events: none;
+      text-shadow: 1px 1px 2px #000; font-size: 14px; line-height: 1.6;
+    }
+    #lobby {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.85); color: #eee;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 100; gap: 16px; padding: 24px; text-align: center;
+    }
+    #lobby input, #lobby button {
+      padding: 12px 20px; font-size: 16px; border-radius: 8px; border: none;
+      min-width: 220px; text-align: center;
+    }
+    #lobby button { background: #ff9933; color: #111; font-weight: bold; cursor: pointer; }
+    #lobby button:active { transform: scale(0.97); }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="ui-overlay" class="hidden"></div>
+  <div id="lobby">
+    <h1 style="margin:0; font-size:28px;">🪧 Jantar Mantar</h1>
+    <p style="margin:0; opacity:0.7; max-width:300px;">Choose your side. The barricades are waiting.</p>
+    <input id="room-code" placeholder="Room Code (e.g. JANTAR)" value="JANTAR" />
+    <div style="display:flex; gap:10px;">
+      <button id="join-protestor">Join as Protestor</button>
+      <button id="join-police">Join as Police</button>
+    </div>
+    <p id="status" style="opacity:0.5; font-size:12px; margin:0;">Connecting to server…</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/colyseus.js@0.15.17/dist/colyseus.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
