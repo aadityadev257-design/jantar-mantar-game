@@ -3,7 +3,7 @@
 // ============================================================
 
 // ⚠️ PASTE YOUR RENDER URL HERE — change https to wss
-const SERVER_URL = "wss://jantar-server-xxxx.onrender.com";
+const SERVER_URL = "https://jantar-server.onrender.com";
 
 // ---------- CONFIG ----------
 const MAP_W = 1200, MAP_H = 900;
